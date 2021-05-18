@@ -111,6 +111,7 @@ public class TimeEntryControllerTest {
     @Test
     public void testUpdate_NotFound() {
         long nonExistentTimeEntryId = 1L;
+        // no matter which TimeEntry is passed in, return null
         doReturn(null)
             .when(timeEntryRepository)
             .update(eq(nonExistentTimeEntryId), any(TimeEntry.class));
